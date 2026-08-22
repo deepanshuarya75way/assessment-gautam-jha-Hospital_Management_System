@@ -1,0 +1,19 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database files
+database/hospital.db
+*.db
+*.sqlite3
+
+# Environment / Virtual Env
+venv/
+env/
+ENV/
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
