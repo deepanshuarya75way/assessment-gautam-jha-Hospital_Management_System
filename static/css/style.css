@@ -1,0 +1,87 @@
+/* Hospital Management System Custom Styles */
+
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.card-title-stat {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6c757d;
+    letter-spacing: 0.5px;
+}
+
+.card-value-stat {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.table-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.badge-scheduled {
+    background-color: #cff4fc;
+    color: #055160;
+}
+
+.badge-completed {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.badge-cancelled {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.badge-no-show {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.badge-available {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.badge-busy {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.badge-on-leave {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+footer {
+    background: #ffffff;
+    border-top: 1px solid #e9ecef;
+}

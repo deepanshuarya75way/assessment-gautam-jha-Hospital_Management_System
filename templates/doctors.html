@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Management - MediCare HMS{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold mb-1"><i class="bi bi-person-badge text-primary me-2"></i>Doctor Management</h2>
+        <p class="text-muted mb-0">Register medical staff, specify specializations, and manage availability.</p>
+    </div>
+    <button class="btn btn-primary" id="openAddDoctorBtn" data-bs-toggle="modal" data-bs-target="#doctorModal">
+        <i class="bi bi-person-plus-fill me-1"></i> Register New Doctor
+    </button>
+</div>
+
+<div class="card p-4">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle w-100" id="doctorsTable">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Doctor Name</th>
+                    <th>Specialization</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Availability</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populated via static/js/doctors.js -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add / Edit Doctor Modal -->
+<div class="modal fade" id="doctorModal" tabindex="-1" aria-labelledby="doctorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form id="doctorForm">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="doctorModalLabel">Add New Doctor</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="doctorFormAlert" class="alert alert-danger d-none" role="alert"></div>
+                    <input type="hidden" id="doctorId">
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Doctor Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="doctorName" required placeholder="e.g. Dr. Sarah Jenkins">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Specialization <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="doctorSpec" required placeholder="e.g. Cardiology, Neurology">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="doctorPhone" required placeholder="e.g. 9898989898">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="doctorEmail" required placeholder="e.g. dr.jenkins@hospital.com">
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label fw-semibold">Current Availability <span class="text-danger">*</span></label>
+                            <select class="form-select" id="doctorAvail" required>
+                                <option value="Available">Available</option>
+                                <option value="Busy">Busy</option>
+                                <option value="On Leave">On Leave</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i> Save Doctor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/doctors.js') }}"></script>
+{% endblock %}
